@@ -1,0 +1,53 @@
+{
+  "input": {
+    "city": "Tokyo",
+    "interests": [
+      "history",
+      "street food"
+    ],
+    "budget": 100
+  },
+  "outcome": "failed",
+  "error_type": "NotFoundError",
+  "http_status": 404,
+  "provider_error_code": "model_not_found",
+  "provider_message": "The model `llama-3.1-8b-instant` does not exist or you do not have access to it.",
+  "available_models": [
+    "allam-2-7b",
+    "meta-llama/llama-prompt-guard-2-86m",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
+    "whisper-large-v3",
+    "canopylabs/orpheus-arabic-saudi",
+    "whisper-large-v3-turbo",
+    "meta-llama/llama-prompt-guard-2-22m",
+    "openai/gpt-oss-safeguard-20b",
+    "openai/gpt-oss-120b",
+    "canopylabs/orpheus-v1-english"
+  ],
+  "elapsed_seconds": 1.45,
+  "events": [
+    {
+      "from_agent": "user",
+      "to_agent": "planner",
+      "message_type": "task_assignment",
+      "content": "Plan a full day in Tokyo with a total budget of $100.00 USD. Interests: history, street food.",
+      "metadata": {
+        "budget": 100.0,
+        "step": 1
+      },
+      "timestamp": "2026-10-22T05:53:56.889155+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "planner is thinking...",
+      "metadata": {
+        "step": 1,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:53:56.889155+00:00"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "same_total_replacement": {
+    "accepted_title": "Unapproved helicopter ride",
+    "accepted_items": 1,
+    "total": 80.0
+  },
+  "fallback_truncates_sixth_activity": {
+    "specialist_item_total": 100,
+    "final_total": 90.0,
+    "activity_count": 5
+  },
+  "fallback_accepts_invalid_time": {
+    "times": [
+      "08:00",
+      "09:30",
+      "25:90"
+    ]
+  },
+  "missing_names_and_meals_accepted": {
+    "meals": [
+      {
+        "cost": 0
+      }
+    ],
+    "total_cost": 0
+  },
+  "declared_cost_inconsistency": {
+    "budget_check_total": 440.0,
+    "final_display_total": 80.0
+  },
+  "unresolved_overspend_still_final": {
+    "budget": 100,
+    "final_cost": 140.0,
+    "last_event": "final_plan"
+  },
+  "cross_origin_post": {
+    "status": 200,
+    "allow_origin": "*"
+  },
+  "session_slot_exhaustion": {
+    "accepted": 100,
+    "last_status": 503,
+    "sessions": 100
+  },
+  "stream_without_owner_auth": {
+    "status": 200,
+    "contains_trip_data": true
+  }
+}

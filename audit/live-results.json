@@ -1,0 +1,174 @@
+{
+  "input": {
+    "city": "Tokyo",
+    "interests": [
+      "history",
+      "street food"
+    ],
+    "budget": 100
+  },
+  "outcome": "failed",
+  "error_type": "BadRequestError",
+  "http_status": 400,
+  "provider_error_code": "json_validate_failed",
+  "provider_message": "Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.",
+  "elapsed_seconds": 5.08,
+  "events": [
+    {
+      "from_agent": "user",
+      "to_agent": "planner",
+      "message_type": "task_assignment",
+      "content": "Plan a full day in Tokyo with a total budget of $100.00 USD. Interests: history, street food.",
+      "metadata": {
+        "budget": 100.0,
+        "step": 1
+      },
+      "timestamp": "2026-10-22T05:54:59.321558+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "planner is thinking...",
+      "metadata": {
+        "step": 1,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:54:59.321558+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "user",
+      "message_type": "response",
+      "content": "{\"transport\":20,\"dining\":35,\"activities\":45}",
+      "metadata": {
+        "step": 1
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "transport",
+      "message_type": "task_assignment",
+      "content": "City: Tokyo\nTransport budget: $20.00 USD\nTraveller interests (for choosing routes): history, street food\nSuggest how to get around the city for a full day (08:00-22:00).",
+      "metadata": {
+        "budget": 20.0,
+        "step": 2
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "dining",
+      "message_type": "task_assignment",
+      "content": "City: Tokyo\nDining budget: $35.00 USD\nFood interests / preferences: history, street food\nSuggest breakfast, lunch and dinner for one person.",
+      "metadata": {
+        "budget": 35.0,
+        "step": 2
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "activities",
+      "message_type": "task_assignment",
+      "content": "City: Tokyo\nActivities budget: $45.00 USD\nInterests: history, street food\nSuggest 3-5 activities for a single day between 08:00 and 22:00.",
+      "metadata": {
+        "budget": 45.0,
+        "step": 2
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "transport",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "transport is thinking...",
+      "metadata": {
+        "budget": 20.0,
+        "step": 3,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "dining",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "dining is thinking...",
+      "metadata": {
+        "budget": 35.0,
+        "step": 3,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "activities",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "activities is thinking...",
+      "metadata": {
+        "budget": 45.0,
+        "step": 3,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:55:01.025859+00:00"
+    },
+    {
+      "from_agent": "transport",
+      "to_agent": "planner",
+      "message_type": "response",
+      "content": "{\"suggestions\":[{\"name\":\"Tokyo Metro 1-Day Ticket\",\"cost\":6,\"description\":\"Unlimited rides on all JR East lines and Tokyo Metro within the day (valid 08:00-22:00). Ideal for visiting historic districts like Asakusa and street food areas like Tsukiji Market.\"},{\"name\":\"Toei Bus 1-Day Pass\",\"cost\":5,\"description\":\"Unlimited rides on Toei buses across Tokyo, convenient for areas not covered by the metro such as Yanaka and Kappabashi.\"},{\"name\":\"Bike Rental (Tensha Rental)\",\"cost\":10,\"description\":\"Rent a bike for 8 hours at a cost of \u00a51,200 (~$10). Great for leisurely exploration of neighborhoods like Ueno and Akihabara while sampling street food.\"},{\"name\":\"Ride-Sharing Estimate (Uber/Lyft)\",\"cost\":8,\"description\":\"Approximate cost for a 30-minute trip from the airport to central Tokyo and a return trip. Useful if you need to reach areas outside the metro network.\"},{\"name\":\"Walking\",\"cost\":0,\"description\":\"Free and recommended for short distances between nearby attractions, especially in historic neighborhoods.\"}],\"total_cost\":29}",
+      "metadata": {
+        "budget": 20.0,
+        "step": 3
+      },
+      "timestamp": "2026-10-22T05:55:02.686318+00:00"
+    },
+    {
+      "from_agent": "dining",
+      "to_agent": "planner",
+      "message_type": "response",
+      "content": "{\"meals\":[{\"meal\":\"breakfast\",\"restaurant\":\"Tori no Aji\",\"cuisine\":\"Japanese street breakfast\",\"cost\":5,\"time\":\"07:30\",\"description\":\"Start your day with a warm bowl of miso soup and a freshly baked Japanese pancake (okonomiyaki) served at a small street stall near Asakusa temple. A perfect blend of local history and quick bite.\"},{\"meal\":\"lunch\",\"restaurant\":\"Ginza Sushi Stand\",\"cuisine\":\"Sushi\",\"cost\":12,\"time\":\"12:15\",\"description\":\"Enjoy a selection of hand-rolled sushi and sashimi at a traditional sushi stand in Ginza. The stand has been operating for 50 years, offering a taste of Tokyo\u2019s culinary heritage.\"},{\"meal\":\"dinner\",\"restaurant\":\"Yoshinoya Ueno\",\"cuisine\":\"Japanese fast food\",\"cost\":8,\"time\":\"18:00\",\"description\":\"Finish your day with a classic beef bowl (gyudon) at the iconic Yoshinoya near Ueno Station. A quick, affordable meal that has been a staple of Tokyo street food for decades.\"}],\"total_cost\":25}",
+      "metadata": {
+        "budget": 35.0,
+        "step": 3
+      },
+      "timestamp": "2026-10-22T05:55:02.750641+00:00"
+    },
+    {
+      "from_agent": "activities",
+      "to_agent": "planner",
+      "message_type": "response",
+      "content": "{\"activities\":[{\"name\":\"Senso-ji Temple (Asakusa)\", \"cost\":0, \"duration_hours\":1.5, \"description\":\"Explore Tokyo's oldest temple, stroll the main hall, and enjoy the vibrant temple grounds.\"},{\"name\":\"Nakamise Shopping Street Food Walk\", \"cost\":10, \"duration_hours\":1, \"description\":\"Sample iconic street foods like ningyo-yaki and taiyaki while browsing souvenir stalls.\"},{\"name\":\"Tsukiji Outer Market Lunch\", \"cost\":15, \"duration_hours\":1.5, \"description\":\"Taste fresh sushi, grilled seafood, and other Japanese delicacies at the bustling market.\"},{\"name\":\"Tokyo National Museum\", \"cost\":10, \"duration_hours\":2, \"description\":\"Discover Japan's art and cultural history with exhibits ranging from ancient pottery to samurai armor.\"},{\"name\":\"Ueno Park Evening Stroll\", \"cost\":0, \"duration_hours\":1, \"description\":\"Relax in the park, visit small temples, and enjoy the evening atmosphere with lanterns and local food stalls.\"}],\"total_cost\":35}",
+      "metadata": {
+        "budget": 45.0,
+        "step": 3
+      },
+      "timestamp": "2026-10-22T05:55:02.852363+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "planner is assembling the final itinerary...",
+      "metadata": {
+        "status": "thinking",
+        "step": 5
+      },
+      "timestamp": "2026-10-22T05:55:02.852363+00:00"
+    },
+    {
+      "from_agent": "planner",
+      "to_agent": "system",
+      "message_type": "status",
+      "content": "planner is thinking...",
+      "metadata": {
+        "step": 5,
+        "status": "thinking"
+      },
+      "timestamp": "2026-10-22T05:55:02.852363+00:00"
+    }
+  ]
+}
